@@ -6,9 +6,4 @@
 
     <!-- default $slot: can think of if as react props -->
     <h4>This is the WELCOME PAGE!</h4>
-
-    <!-- modified $slot sample 2 -->
-    <x-slot:footer>
-        Dashboard footer
-    </x-slot:footer>
 </x-layout>
