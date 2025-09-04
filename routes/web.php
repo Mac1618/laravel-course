@@ -13,7 +13,7 @@ Route::get('/jobs', function () {
 
 Route::get('/job/{id}', function ($id) {
     // laravel method find 1st match in array
-    $job = Job::findId($id);
+    $job = Job::find($id);
 
     // return job found based on id
     return view('job', ['job' => $job]);
