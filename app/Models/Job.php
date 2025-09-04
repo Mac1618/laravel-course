@@ -16,4 +16,10 @@ class Job extends Model {
 
   // required fields and only fields that eloquent will save to db
   protected $fillable = ['title', 'salary', 'employer_id'];
+
+  // job belongs to employer
+  // job = mark, employer = intellect
+  public function employer() {
+    return $this->belongsTo(Employer::class);
+  }
 }

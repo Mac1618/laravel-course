@@ -16,7 +16,7 @@ return new class extends Migration
 
             // 2 options: foreign key for employer table
                 // - $table->unsignedBigInteger('employer_id');
-                $table->foreignIdFor(App\Models\Employer::class);
+            $table->foreignIdFor(App\Models\Employer::class);
 
             $table->string('title');
             $table->string('salary');
