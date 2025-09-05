@@ -6,14 +6,17 @@
     <h2 class="text-2xl">This is the JOBS PAGE!</h2>
     <br>
 
-    <ul>
+    <ul class="space-y-6">
         {{-- "$jobs" came from "routes" --}}
         @foreach ($jobs as $job)
-            <li>
-                <a href="/job/{{$job['id']}}" class="text-blue-300 hover:underline">
-                    <strong>{{ $job['title'] }}:</strong> with a salary of {{ $job['salary']}}
-                </a>
-            </li>
+            <a href="/job/{{$job['id']}}" class="w-full inline-block">
+                <li class="p-4 flex flex-col h-auto w-full border rounded-lg">
+                    <span class="text-blue-500 font-semibold">{{ $job->employer->name  }}</span>
+                    <p>
+                        <strong>{{ $job['title'] }}:</strong> with a salary of {{ $job['salary']}}
+                    </p>
+                </li>
+            </a>
         @endforeach
     </ul>
 </x-layout>

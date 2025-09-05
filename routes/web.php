@@ -8,7 +8,13 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    return view('jobs', ['jobs' => Job::all()]);
+    // lazy loading: sends extra queries for each related record.
+    // $jobs = Job::all();
+
+    // eager loading: fetches everything in fewer queries.
+    $jobs = Job::with('employer')->get();
+
+    return view('jobs', ['jobs' => $jobs]);
 });
 
 Route::get('/job/{id}', function ($id) {
