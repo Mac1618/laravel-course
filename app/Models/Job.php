@@ -14,7 +14,11 @@ class Job extends Model {
   protected $table = 'job_listings';
 
   // required fields and only fields that eloquent will save to db
-  protected $fillable = ['title', 'salary', 'employer_id'];
+  // protected $fillable = ['title', 'salary', 'employer_id'];
+
+  // can be used to disable "$fillable"
+  // list only the fields to protect
+  protected $guarded = [];
 
   // job belongs to employer
   // job = mark, employer = intellect

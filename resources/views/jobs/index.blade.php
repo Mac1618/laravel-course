@@ -19,4 +19,8 @@
             </a>
         @endforeach
     </ul>
+
+    <div class="mt-5">
+        {{ $jobs->links() }}
+    </div>
 </x-layout>
