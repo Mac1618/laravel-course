@@ -10,7 +10,15 @@
 
   <br>
 
-  <a href='/jobs' class="text-blue-300 hover:underline">
-    go back to Jobs list
-  </a>
+  
+  <div class="flex justify-between">
+    <x-button href='/jobs' class="text-blue-300 hover:underline">
+      Back
+    </x-button>
+
+    <x-button href="/jobs/{{ $job->id }}/edit">
+      Edit
+    </x-button>
+  </div>
+
 </x-layout>

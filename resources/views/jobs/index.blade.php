@@ -9,7 +9,7 @@
     <ul class="space-y-6">
         {{-- "$jobs" came from "routes" --}}
         @foreach ($jobs as $job)
-            <a href="/job/{{$job['id']}}" class="w-full inline-block">
+            <a href="/jobs/{{$job['id']}}" class="w-full inline-block">
                 <li class="p-4 flex flex-col h-auto w-full border rounded-lg">
                     <span class="text-blue-500 font-semibold">{{ $job->employer->name  }}</span>
                     <p>
