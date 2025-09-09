@@ -16,33 +16,26 @@
 
           <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             {{-- title --}}
-            <div class="sm:col-span-4">
-              <label for="title" class="block text-sm/6 font-medium text-white">Title</label>
-              <div class="mt-2">
-                <div class="flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
-                  <input required id="title" type="text" name="title" placeholder="Software Engineer" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
+            <x-form-field>
+                <x-form-label for="title">Title</x-form-label>
+                <div class="mt-2">
+                  <x-form-input required id="title" type="text" name="title" placeholder="Software Engineer"/>
+                    
+                  {{-- error --}}
+                  <x-form-error accessor="title"/>
                 </div>
-              </div>
-              
-              {{-- error --}}
-              @error('title')
-                <p class="text-red-500">{{ $message }}</p>
-              @enderror
-            </div>
+            </x-form-field>
 
             {{-- salary --}}
             <div class="sm:col-span-4">
-                <label for="salary" class="block text-sm/6 font-medium text-white">Salary</label>
+                <x-form-label for="salary">Salary
+                </x-form-label>
                 <div class="mt-2">
-                  <div class="flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
-                    <input required id="salary" type="text" name="salary" placeholder="janesmith" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
-                  </div>
+                  <x-form-input required id="salary" type="text" name="salary" placeholder="janesmith"/>
                 </div>
 
                 {{-- error --}}
-                @error('title')
-                  <p class="text-red-500">{{ $message }}</p>
-                @enderror
+                <x-form-error accessor="salary"/>
               </div>
           </div>
 
@@ -60,7 +53,7 @@
 
       <div class="mt-6 flex items-center justify-end gap-x-6">
         <button type="button" class="text-sm/6 font-semibold text-white">Cancel</button>
-        <button type="submit" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Save</button>
+        <x-form-button>Save</x-form-button>
       </div>
     </form>
 
